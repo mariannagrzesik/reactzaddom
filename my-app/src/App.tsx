@@ -27,7 +27,7 @@ function App() {
       <TodoList />
       <Toggle />
       <List {...listProp} />
-      <Timer />
+      <Timer seconds={10} />
     </div>
   );
 }

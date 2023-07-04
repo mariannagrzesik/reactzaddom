@@ -5,8 +5,10 @@ type TimerProps = {
 	seconds: number;
 };
 
-export const Timer = () => {
-	const [seconds, setSeconds] = useState(10);
+export const Timer = ({seconds}: TimerProps) => {
+    
+
+	const [secondsValue, setSeconds] = useState(seconds);
 	const intervalRef = useRef<NodeJS.Timeout | null>(null);
 
 	const clearFunction = () => {
@@ -32,7 +34,9 @@ export const Timer = () => {
 	};
 
 	useEffect(() => {
+        setSeconds(seconds);
 		startInterval();
+        console.log(seconds)
 		return () => {
 			clearFunction();
 		};
@@ -41,7 +45,7 @@ export const Timer = () => {
 	return (
 		<>
 			<div>
-				<span>{seconds}</span>
+				<span>{secondsValue}</span>
 				<button onClick={clearFunction}>STOP</button>
 				<button onClick={startInterval}>START</button>
 			</div>
