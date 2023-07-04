@@ -9,6 +9,7 @@ import { Toggle } from "./components/Toggle";
 import { List } from "./components/List";
 import { Timer } from "./components/Timer";
 import { Dropdown, DropdownItem } from "./components/Dropdown";
+import { Modal } from "./components/Modal";
 
 function App() {
 	const headerList = "Lista przekazywanna jako propsy";
@@ -34,6 +35,7 @@ function App() {
 			<List {...listProp} />
 			{/* <Timer seconds={10} /> */}
 			<Dropdown array={arrayDropdown} />
+      <Modal />
 		</div>
 	);
 }
